@@ -14,6 +14,7 @@
         {
             Assets::get_instance();
             Support::get_instance();
+            Menus::get_instance();
         }
     }
 

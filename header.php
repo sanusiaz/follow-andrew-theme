@@ -18,7 +18,8 @@
     <?php
 		if (function_exists('wp_body_open'))
 		{
-			wp_body_open(  );
+			// useful for google analysics and facebook e.t.c 
+			wp_body_open( );
 		}
 	?>
     <header class="header text-center">	    
@@ -74,5 +75,9 @@
 
     <div class="main-wrapper">
 	    <header class="page-title theme-bg-light text-center gradient py-5">
-			<h1 class="heading"><?= the_title();?></h1>
+			<?php if(is_page()):?>
+				<h1 class="heading"><?= get_the_title();?></h1>
+			<?php else:?>
+				<h1 class="heading"><?= the_title();?></h1>
+			<?php endif;?>
 		</header>
